@@ -14,6 +14,7 @@
     --bg-white: #ffffff;
     --border-color: #e5e7eb;
     --success-color: #10b981;
+    --warning-color: #f59e0b;
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -75,6 +76,10 @@ body {
 }
 
 .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link.active {
     color: var(--primary-color);
 }
 
@@ -269,6 +274,8 @@ section {
 .timeline {
     position: relative;
     padding-left: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .timeline::before {
@@ -460,6 +467,81 @@ section {
     font-weight: 500;
 }
 
+/* Achievements Section */
+.achievements {
+    background: var(--bg-white);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.achievement-card {
+    background: var(--bg-light);
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+}
+
+.achievement-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--warning-color);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.achievement-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.achievement-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.achievement-card h4 {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.achievement-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.achievement-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.achievement-tag {
+    background: var(--bg-white);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid var(--primary-color);
+}
+
 /* Contact Section */
 .contact {
     background: var(--bg-light);
@@ -602,7 +684,8 @@ section {
     }
 
     .skills-grid,
-    .projects-grid {
+    .projects-grid,
+    .achievements-grid {
         grid-template-columns: 1fr;
     }
 
